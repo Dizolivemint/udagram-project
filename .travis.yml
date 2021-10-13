@@ -25,5 +25,5 @@ after_success:
 # safelist
 branches:
   only:
-  - master
-  - stable
+  - main
+  - staging
