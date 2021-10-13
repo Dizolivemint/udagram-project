@@ -17,10 +17,16 @@ script:
   - docker --version # print the version for logging
   - docker-compose -f docker-compose-build.yaml build --parallel # build images
   - docker tag udagram-api-feed dizolivemint/udagram-api-feed:v1 # tagging
+  - docker tag udagram-api-feed dizolivemint/udagram-api-user:v1
+  - docker tag udagram-api-feed dizolivemint/udagram-frontend:v1
+  - docker tag udagram-api-feed dizolivemint/reverseproxy:v1
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push dizolivemint/udagram-api-feed:v1
+  - docker push dizolivemint/udagram-api-user:v1
+  - docker push dizolivemint/udagram-frontend:v1
+  - docker push dizolivemint/reverseproxy:v1
 
 # safelist
 branches:
