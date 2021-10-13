@@ -21,3 +21,9 @@ script:
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push dizolivemint/udagram-api-feed:v1
+
+# safelist
+branches:
+  only:
+  - master
+  - stable
