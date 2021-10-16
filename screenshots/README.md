@@ -18,7 +18,15 @@ kubectl describe services
 * To verify that you have horizontal scaling set against CPU usage
 ```bash
 kubectl describe hpa
-```
+```  
+  
+HPA only method that works is manually adding it:  
+https://stackoverflow.com/questions/54106725/docker-kubernetes-mac-autoscaler-unable-to-find-metrics  
+  
+AWS instructions do not work:  
+https://docs.aws.amazon.com/eks/latest/userguide/metrics-server.html  
+  
+Video in the course has the same issue, but the instructor doesn't notice.
 * To verify that you have set up logging with a backend application
 ```bash
 kubectl logs {pod_name}
