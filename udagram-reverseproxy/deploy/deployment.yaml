@@ -18,6 +18,8 @@ spec:
         - image: dizolivemint/reverseproxy:v1
           name: reverseproxy
           imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
           resources:
             requests:
               memory: "64Mi"
