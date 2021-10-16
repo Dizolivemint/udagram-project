@@ -15,7 +15,7 @@ spec:
         service: frontend
     spec:
       containers:
-        - image: dizolivemint/udagram-frontend:v3
+        - image: dizolivemint/udagram-frontend:v4
           name: frontend
           imagePullPolicy: Always
           ports:
